@@ -36,52 +36,60 @@
   <div class="hero-grid"></div>
   <div class="hero-glow"></div>
 
-  <div class="hero-content">
-    <p class="hero-tag">Frontend Developer</p>
+  <div class="container-fluid">
+    <div class="row align-items-center gy-5">
+      <div class="col-lg-6">
+        <div class="hero-content">
+          <p class="hero-tag">Frontend Developer</p>
 
-    <h1>
-      Pawan<br />
-      <em>Kumar</em><br />
-      Gupta
-    </h1>
+          <h1>
+            Pawan<br />
+            <em>Kumar</em><br />
+            Gupta
+          </h1>
 
-    <p class="hero-desc">
-      Building scalable, performant web applications with Angular &amp;
-      TypeScript. Passionate about clean architecture, reusable components,
-      and real-time data-driven interfaces.
-    </p>
+          <p class="hero-desc">
+            Building scalable, performant web applications with Angular &amp;
+            TypeScript. Passionate about clean architecture, reusable components,
+            and real-time data-driven interfaces.
+          </p>
 
-    <div class="hero-ctas">
-      <button class="btn-primary" (click)="scrollTo('projects')">
-        View Projects ↓
-      </button>
-      <button class="btn-outline" (click)="scrollTo('contact')">
-        Get in Touch
-      </button>
+          <div class="hero-ctas d-flex flex-wrap gap-3">
+            <button class="btn-primary" (click)="scrollTo('projects')">
+              View Projects ↓
+            </button>
+            <button class="btn-outline" (click)="scrollTo('contact')">
+              Get in Touch
+            </button>
+          </div>
+
+          <div class="hero-stats d-flex flex-wrap gap-4 mt-4">
+            <div class="stat">
+              <span class="stat-num">1+</span>
+              <span class="stat-label">Year Experience</span>
+            </div>
+            <div class="stat">
+              <span class="stat-num">3</span>
+              <span class="stat-label">Key Projects</span>
+            </div>
+            <div class="stat">
+              <span class="stat-num">50%</span>
+              <span class="stat-label">Processing Boost</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6">
+        <div class="hero-visual reveal">
+          <img
+            class="hero-image"
+            src="https://png.pngtree.com/png-clipart/20240903/original/pngtree-clipart-of-boy-using-computer-png-image_15920521.png"
+            alt="Boy using computer"
+          />
+        </div>
+      </div>
     </div>
-
-    <div class="hero-stats">
-      <div class="stat">
-        <span class="stat-num">1+</span>
-        <span class="stat-label">Year Experience</span>
-      </div>
-      <div class="stat">
-        <span class="stat-num">3</span>
-        <span class="stat-label">Key Projects</span>
-      </div>
-      <div class="stat">
-        <span class="stat-num">50%</span>
-        <span class="stat-label">Processing Boost</span>
-      </div>
-    </div>
-  </div>
-
-  <div class="hero-visual reveal">
-    <img
-      class="hero-image"
-      src="https://png.pngtree.com/png-clipart/20240903/original/pngtree-clipart-of-boy-using-computer-png-image_15920521.png"
-      alt="Boy using computer"
-    />
   </div>
 </section>
 
