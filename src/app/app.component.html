@@ -1,0 +1,187 @@
+<!-- Custom cursor -->
+<div
+  class="cursor"
+  [style.left.px]="cursorX()"
+  [style.top.px]="cursorY()"
+></div>
+<div
+  class="cursor-ring"
+  [style.left.px]="ringX()"
+  [style.top.px]="ringY()"
+></div>
+
+<!-- ── NAVBAR ─────────────────────────────────────────────── -->
+<nav [ngClass]="{ scrolled: navScrolled() }">
+  <div class="nav-logo">PK</div>
+  <div class="nav-links">
+    <button
+      *ngFor="let link of [
+        { label: 'Home',       id: 'hero'        },
+        { label: 'Skills',      id: 'skills'      },
+        { label: 'Experience',  id: 'experience'  },
+        { label: 'Academic',    id: 'education'   },
+        { label: 'Projects',    id: 'projects'    },
+        { label: 'Contact',     id: 'contact'     }
+      ]"
+      (click)="scrollTo(link.id)"
+      [ngClass]="{ active: isActive(link.id) }"
+    >
+      {{ link.label }}
+    </button>
+  </div>
+</nav>
+
+<!-- ── HERO ───────────────────────────────────────────────── -->
+<section id="hero" class="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-glow"></div>
+
+  <div class="hero-content">
+    <p class="hero-tag">Frontend Developer</p>
+
+    <h1>
+      Pawan<br />
+      <em>Kumar</em><br />
+      Gupta
+    </h1>
+
+    <p class="hero-desc">
+      Building scalable, performant web applications with Angular &amp;
+      TypeScript. Passionate about clean architecture, reusable components,
+      and real-time data-driven interfaces.
+    </p>
+
+    <div class="hero-ctas">
+      <button class="btn-primary" (click)="scrollTo('projects')">
+        View Projects ↓
+      </button>
+      <button class="btn-outline" (click)="scrollTo('contact')">
+        Get in Touch
+      </button>
+    </div>
+
+    <div class="hero-stats">
+      <div class="stat">
+        <span class="stat-num">1+</span>
+        <span class="stat-label">Year Experience</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">3</span>
+        <span class="stat-label">Key Projects</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">50%</span>
+        <span class="stat-label">Processing Boost</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-visual reveal">
+    <img
+      class="hero-image"
+      src="https://png.pngtree.com/png-clipart/20240903/original/pngtree-clipart-of-boy-using-computer-png-image_15920521.png"
+      alt="Boy using computer"
+    />
+  </div>
+</section>
+
+<!-- ── SKILLS ─────────────────────────────────────────────── -->
+<section id="skills">
+  <p class="section-label reveal">What I Work With</p>
+  <h2 class="section-title reveal">Skills &amp;<br />Technologies</h2>
+
+  <div class="skills-grid">
+    <div class="skill-block reveal" *ngFor="let skill of skills">
+      <div class="skill-category">{{ skill.category }}</div>
+      <div class="skill-tags">
+        <span class="tag" *ngFor="let tag of skill.tags">{{ tag }}</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── EXPERIENCE ─────────────────────────────────────────── -->
+<section id="experience">
+  <p class="section-label reveal">Where I've Worked</p>
+  <h2 class="section-title reveal">Experience</h2>
+
+  <div class="exp-card reveal" *ngFor="let exp of experience">
+    <div class="exp-header">
+      <div>
+        <div class="exp-role">{{ exp.role }}</div>
+        <div class="exp-company">{{ exp.company }} · {{ exp.location }}</div>
+      </div>
+      <div class="exp-period">{{ exp.period }}</div>
+    </div>
+    <ul class="exp-list">
+      <li *ngFor="let point of exp.points">{{ point }}</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ── PROJECTS ───────────────────────────────────────────── -->
+<section id="projects">
+  <p class="section-label reveal">Featured Projects</p>
+  <h2 class="section-title reveal">What I've Built</h2>
+
+  <div class="projects-grid">
+    <div class="project-card reveal" *ngFor="let proj of projects">
+      <span class="project-num">{{ proj.num }}</span>
+      <div class="project-name">{{ proj.name }}</div>
+      <div class="project-tech">
+        <span *ngFor="let t of proj.tech">{{ t }}</span>
+      </div>
+      <ul class="project-desc">
+        <li *ngFor="let p of proj.points">{{ p }}</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ── EDUCATION ──────────────────────────────────────────── -->
+<section id="education">
+  <p class="section-label reveal">Education</p>
+  <h2 class="section-title reveal">Academic<br />Background</h2>
+
+  <div class="edu-list reveal">
+    <div class="edu-item" *ngFor="let edu of education">
+      <div>
+        <div class="edu-degree">{{ edu.degree }}</div>
+        <div class="edu-school">{{ edu.school }}</div>
+      </div>
+      <div class="edu-year">{{ edu.year }}</div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CONTACT ────────────────────────────────────────────── -->
+<section id="contact">
+  <p class="section-label reveal">Get in Touch</p>
+  <h2 class="section-title reveal">
+    Let's Work<br />
+    <em class="accent-italic">Together</em>
+  </h2>
+  <p class="contact-desc reveal">
+    Open to frontend opportunities, freelance projects, and exciting
+    collaborations. Reach out via any channel below.
+  </p>
+
+  <div class="contact-links reveal">
+    <a
+      class="contact-link"
+      *ngFor="let c of contacts"
+      [href]="c.href"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <span class="c-icon">{{ c.icon }}</span>
+      {{ c.label }}
+    </a>
+  </div>
+</section>
+
+<!-- ── FOOTER ─────────────────────────────────────────────── -->
+<footer>
+  <span>© 2026 Pawan Kumar Gupta</span>
+  <span>Frontend Developer · Angular · TypeScript</span>
+</footer>
